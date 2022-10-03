@@ -5,6 +5,11 @@ export default function App() {
   return (
     <div className="App">
       <DataStorage />
+      <p>
+        <a href="https://github.com/orchid-cloud/weather-app-react.git">
+          Open source code
+        </a>
+      </p>
     </div>
   );
 }
