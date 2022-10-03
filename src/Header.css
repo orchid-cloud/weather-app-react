@@ -1,0 +1,71 @@
+html {
+  margin: 0;
+  padding: 0;
+}
+
+.Header .general {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Header .header {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 50px;
+}
+
+.Header .card {
+  width: 18rem;
+  text-align: left;
+}
+
+.Header .card-text {
+  font-size: 48px;
+}
+
+.description {
+  opacity: 0.6;
+}
+
+.Header .temperature-box {
+  display: flex;
+}
+
+.Header .temperature {
+  min-width: 55px;
+  font-size: 40px;
+}
+
+.Header .units {
+  font-size: 40px;
+}
+
+.Header .header__img {
+  display: block;
+  margin: auto;
+}
+
+.Header .header__img img {
+  padding: 0 50px;
+}
+
+.Header .details {
+  align-self: center;
+  min-width: 150px;
+  text-align: left;
+}
+
+.Header .input {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.Header .input-city {
+  margin-right: 10px;
+}
+
+.Header .submit_btn {
+  margin-right: 15px;
+}

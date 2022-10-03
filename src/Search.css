@@ -1,0 +1,9 @@
+.Search {
+  text-align: center;
+}
+
+.Search .list {
+  max-width: 300px;
+  margin: 20px auto;
+  text-align: left;
+}

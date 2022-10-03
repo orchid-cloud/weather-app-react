@@ -1,0 +1,13 @@
+.Input .input {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.Input .input-city {
+  margin-right: 10px;
+}
+
+.Input .submit_btn {
+  margin-right: 15px;
+}
