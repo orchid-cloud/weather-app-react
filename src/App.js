@@ -6,7 +6,10 @@ export default function App() {
     <div className="App">
       <DataStorage />
       <p className="gitlink">
-        <a href="https://github.com/orchid-cloud/weather-app-react.git">
+        <a
+          href="https://github.com/orchid-cloud/weather-app-react.git"
+          target="blank"
+        >
           Open source code
         </a>
       </p>
