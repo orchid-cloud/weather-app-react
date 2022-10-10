@@ -28,8 +28,8 @@ export default function WeatherConvert(props) {
     let fahrenheit = (props.celsius * 9) / 5 + 32;
     return (
       <div className="WeatherConvert">
-        <span>
-          {Math.round(fahrenheit)}{" "}
+        <span className="temp"> {Math.round(fahrenheit)}</span>{" "}
+        <span className="temp-descr">
           <a href="/" onClick={convertToCelsius}>
             °C
           </a>{" "}
