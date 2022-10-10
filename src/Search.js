@@ -2,6 +2,7 @@ import React, { Fragment, useState } from "react";
 import axios from "axios";
 
 import "./Search.css";
+import WeatherConvert from "./WeatherConvert";
 
 export default function Search() {
   const [city, setCity] = useState(null);
@@ -44,7 +45,8 @@ export default function Search() {
       <ul className="list">
         {city && (
           <Fragment>
-            <li>temperature: {Math.round(temperature)} C</li>
+            <WeatherConvert celsius={Math.round(temperature)} />
+
             <li>description: {description}</li>
             <li>humidity: {humidity} %</li>
             <li>wind: {wind} km/h</li>

@@ -1,0 +1,12 @@
+.WeatherConvert {
+  display: flex;
+}
+
+.WeatherConvert .temp {
+  min-width: 55px;
+  font-size: 40px;
+}
+
+.WeatherConvert .temp-descr {
+  text-align: top;
+}
