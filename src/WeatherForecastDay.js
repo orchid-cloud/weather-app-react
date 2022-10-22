@@ -1,5 +1,4 @@
 import React from "react";
-import icon from "./images/02d@2x.png";
 
 export default function WeatherForecastDay(props) {
   // console.log(props.data);
