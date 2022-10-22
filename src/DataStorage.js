@@ -25,6 +25,7 @@ export default function DataStorage(props) {
     setIcon(data.data.weather[0].icon);
     setLongitude(data.data.coord.lon);
     setLatitude(data.data.coord.lat);
+    console.log(data.data.coord);
   }
 
   function requestData(response) {
@@ -50,9 +51,11 @@ export default function DataStorage(props) {
           icon={icon}
         />
         <Input handleSubmit={handleSubmit} />
-        {longitude && (
-          <WeatherForecast longitude={longitude} latitude={latitude} />
-        )}
+        <WeatherForecast
+          key={`${longitude}-${latitude}`}
+          longitude={longitude}
+          latitude={latitude}
+        />
       </>
     );
   } else {

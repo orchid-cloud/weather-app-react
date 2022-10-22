@@ -14,7 +14,7 @@ export default function WeatherForecast(props) {
     setLoaded(true);
     console.log(response);
   }
-
+  
   if (loaded) {
     return (
       <div className="WeatherForecast">
