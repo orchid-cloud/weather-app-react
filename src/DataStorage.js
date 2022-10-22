@@ -2,15 +2,18 @@ import React, { useState } from "react";
 import axios from "axios";
 import Header from "./Header";
 import Input from "./Input";
+import WeatherForecast from "./WeatherForecast";
 
-export default function DataStorage() {
-  const [city, setCity] = useState("Cityname");
+export default function DataStorage(props) {
+  const [city, setCity] = useState(props.defaultCity);
   const [temperature, setTemperature] = useState("t");
   const [description, setDescription] = useState(null);
   const [humidity, setHumidity] = useState(null);
   const [wind, setWind] = useState(null);
   const [feelsLike, setFeelsLike] = useState(null);
   const [icon, setIcon] = useState("02d");
+  const [longitude, setLongitude] = useState(null);
+  const [latitude, setLatitude] = useState(null);
 
   function handleData(data) {
     setCity(data.data.name);
@@ -20,10 +23,12 @@ export default function DataStorage() {
     setHumidity(data.data.main.humidity);
     setWind(data.data.wind.speed);
     setIcon(data.data.weather[0].icon);
+    setLongitude(data.data.coord.lon);
+    setLatitude(data.data.coord.lat);
   }
 
   function requestData(response) {
-    let url = `https://api.openweathermap.org/data/2.5/weather?q=${response}&appid=ad08724a8362612bf966360e7b25eb54&units=metric`;
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${response}&appid=6438ebf906174a5606ff8d953442b1a6&units=metric`;
     axios.get(url).then(handleData);
   }
   function handleSubmit(event) {
@@ -32,18 +37,26 @@ export default function DataStorage() {
     requestData(event.target.cityName.value);
   }
 
-  return (
-    <>
-      <Header
-        city={city}
-        temp={temperature}
-        desc={description}
-        humidity={humidity}
-        wind={wind}
-        feelsLike={feelsLike}
-        icon={icon}
-      />
-      <Input handleSubmit={handleSubmit} />
-    </>
-  );
+  if (latitude) {
+    return (
+      <>
+        <Header
+          city={city}
+          temp={temperature}
+          desc={description}
+          humidity={humidity}
+          wind={wind}
+          feelsLike={feelsLike}
+          icon={icon}
+        />
+        <Input handleSubmit={handleSubmit} />
+        {longitude && (
+          <WeatherForecast longitude={longitude} latitude={latitude} />
+        )}
+      </>
+    );
+  } else {
+    requestData(props.defaultCity);
+    return "Loading...";
+  }
 }

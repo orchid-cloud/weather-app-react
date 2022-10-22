@@ -1,3 +1,7 @@
+.Input {
+  margin-bottom: 30px;
+}
+
 .Input .input {
   display: flex;
   justify-content: center;

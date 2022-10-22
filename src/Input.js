@@ -16,9 +16,6 @@ export default function Input({ handleSubmit }) {
         <button type="submit" className="btn btn-primary submit_btn">
           Search
         </button>
-        <button type="button" className="btn btn-success">
-          Current
-        </button>
       </form>
     </div>
   );

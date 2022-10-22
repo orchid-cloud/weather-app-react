@@ -50,8 +50,6 @@ export default function Header({
             <p className="card-text">{city}</p>
             <p className="description">{desc}</p>
             <div className="temperature-box">
-              {/* <p className="temperature">{temp}</p> */}
-              {/* <span className="units">°C</span> */}
               <WeatherConvert celsius={Math.round(temp)} />
             </div>
           </div>

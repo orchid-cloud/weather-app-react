@@ -4,7 +4,9 @@ import DataStorage from "./DataStorage";
 export default function App() {
   return (
     <div className="App">
-      <DataStorage />
+      <div className="App-border">
+        <DataStorage defaultCity="Kyiv" />
+      </div>
       <p className="gitlink">
         <a
           href="https://github.com/orchid-cloud/weather-app-react.git"
